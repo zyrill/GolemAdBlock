@@ -4,6 +4,7 @@
 // @description Blocks those annoying adblock notices left on Golem when using Adblock Plus
 // @author      zyrill
 // @include     https://www.golem.de/*
+// @include     http://www.golem.de/*
 // @encoding    utf-8
 // @description Remove Golem Ads
 // @grant       none
