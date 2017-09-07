@@ -7,7 +7,7 @@
 // @encoding    utf-8
 // @description Remove Golem Ads
 // @grant       none
-// @run-at      document-start
+// @run-at      document-idle
 // @version     1.0
 // ==/UserScript==
 
