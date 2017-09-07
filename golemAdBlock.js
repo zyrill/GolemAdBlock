@@ -1,9 +1,14 @@
 // ==UserScript==
-// @name        Golem remove top ad
+// @name        Golem Adblocker
+// @namespace   https://github.com/zyrill/GolemAdBlock
+// @description Blocks those annoying adblock notices left on Golem when using Adblock Plus
+// @author      zyrill
 // @include     https://www.golem.de/*
+// @encoding    utf-8
 // @description Remove Golem Ads
 // @grant       none
-// @version     0.1
+// @run-at      document-start
+// @version     1.0
 // ==/UserScript==
 
 // Get all child elements of main presentation element
