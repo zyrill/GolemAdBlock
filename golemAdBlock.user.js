@@ -9,7 +9,7 @@
 // @description Remove Golem Ads
 // @grant       none
 // @run-at      document-idle
-// @version     1.1.0
+// @version     1.2.0
 // ==/UserScript==
 
 try { var nodeList = document.getElementById("grandwrapper").childNodes; }
