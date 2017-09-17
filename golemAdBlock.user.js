@@ -15,8 +15,16 @@
 try { var nodeList = document.getElementById("grandwrapper").childNodes; }
 catch(err) { console.log(err.message); }
 
-nodeList.every(function(element, index) {
-  element.remove;
-  if (element.id === "screen") return false
-  else return true
-})
+try {
+  if (nodeList != null) {
+    for (var i = 0; i < nodeList.length; i++) {
+      if (nodeList[i].id === "screen") {
+        i = nodeList.length;
+      }
+	  else {
+        nodeList[0].remove();
+      }
+    }
+  }
+}
+catch(err) { console.log(err); }
