@@ -16,7 +16,7 @@ try { var nodeList = document.getElementById("grandwrapper").childNodes; }
 catch(err) { console.log(err.message); }
 
 try {
-  if (nodeList != null) {
+  if (nodeList !== null) {
     for (var i = 0; i < nodeList.length; i++) {
       if (nodeList[i].id === "screen") {
         i = nodeList.length;
