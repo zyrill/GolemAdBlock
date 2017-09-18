@@ -9,22 +9,26 @@
 // @description Remove Golem Ads
 // @grant       none
 // @run-at      document-idle
-// @version     1.2.0
+// @version     1.3.0
 // ==/UserScript==
 
-try { var nodeList = document.getElementById("grandwrapper").childNodes; }
-catch(err) { console.log(err.message); }
+setTimeout(main, 3000);
 
-try {
-  if (nodeList !== null) {
-    for (var i = 0; i < nodeList.length; i++) {
-      if (nodeList[i].id === "screen") {
-        i = nodeList.length;
-      }
-	  else {
-        nodeList[0].remove();
+function main() {
+  try { var nodeList = document.getElementById("grandwrapper").childNodes; }
+  catch(err) { console.log(err.message); }
+  
+  try {
+    if (nodeList !== null) {
+      for (var i = 0; i < nodeList.length; i++) {
+        if (nodeList[0].id === "screen") {
+          i = nodeList.length;
+        }
+  	    else {
+          nodeList[0].remove();
+        }
       }
     }
   }
+  catch(err) { console.log(err); }
 }
-catch(err) { console.log(err); }
