@@ -9,12 +9,26 @@
 // @description Remove Golem Ads
 // @grant       none
 // @run-at      document-idle
-// @version     1.3.0
+// @version     1.4.0
 // ==/UserScript==
 
-setTimeout(main, 3000);
+window.addEventListener ("load", main, false);
 
 function main() {
+  var insertedNodes = [];
+  var observer = new MutationObserver(function(mutations) {
+  mutations.forEach(function(mutation) {
+    for (var i = 0; i < mutation.addedNodes.length; i++)
+      insertedNodes.push(mutation.addedNodes[i]);
+    })
+  });
+  observer.observe(document, { childList: true });
+  console.log("Node inserts: " + insertedNodes.length);
+
+  insertedNodes.forEach(function(node) {
+    node.remove();
+  })
+  
   try { var nodeList = document.getElementById("grandwrapper").childNodes; }
   catch(err) { console.log(err.message); }
   
