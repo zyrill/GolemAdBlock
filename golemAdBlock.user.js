@@ -7,39 +7,27 @@
 // @include     http://www.golem.de/*
 // @encoding    utf-8
 // @description Remove Golem Ads
+// @run-at      document-idle
 // @grant       none
-// @version     1.5.0
+// @version     1.5.1
 // ==/UserScript==
 
-function main() {
-  var insertedNodes = [];
-  var observer = new MutationObserver(function(mutations) {
-  mutations.forEach(function(mutation) {
-    for (var i = 0; i < mutation.addedNodes.length; i++)
-      insertedNodes.push(mutation.addedNodes[i]);
-    })
-  });
-  observer.observe(document, { childList: true });
-  console.log("Node inserts: " + insertedNodes.length);
+setTimeout(main(), 4000);
 
-  insertedNodes.forEach(function(node) {
-    node.remove();
-  })
-  
-  try { var nodeList = document.getElementById("grandwrapper").childNodes; }
-  catch(err) { console.log(err.message); }
-  
-  try {
+function main() {
+    var nodeList = [];
+    try { nodeList = document.getElementById("grandwrapper").childNodes; }
+    catch(err) { console.log("No matching nodes found.");}
+
     if (nodeList !== null) {
-      for (var i = 0; i < nodeList.length; i++) {
-        if (nodeList[0].id === "screen") {
-          i = nodeList.length;
+        console.log("Removing nodes.");
+        for (var i = 0; i < nodeList.length; i++) {
+            if (nodeList[0].id === "screen") {
+                i = nodeList.length;
+            }
+            else {
+                nodeList[0].remove();
+            }
         }
-  	    else {
-          nodeList[0].remove();
-        }
-      }
     }
-  }
-  catch(err) { console.log(err); }
 }
