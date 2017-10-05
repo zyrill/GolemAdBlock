@@ -8,11 +8,8 @@
 // @encoding    utf-8
 // @description Remove Golem Ads
 // @grant       none
-// @run-at      document-idle
-// @version     1.4.0
+// @version     1.5.0
 // ==/UserScript==
-
-window.addEventListener ("load", main, false);
 
 function main() {
   var insertedNodes = [];
