@@ -9,25 +9,32 @@
 // @description Remove Golem Ads
 // @run-at      document-idle
 // @grant       none
-// @version     1.5.1
+// @version     2.0.0
 // ==/UserScript==
 
-setTimeout(main(), 4000);
+// select the target node
+var target = document.getElementById("grandwrapper");
 
-function main() {
-    var nodeList = [];
-    try { nodeList = document.getElementById("grandwrapper").childNodes; }
-    catch(err) { console.log("No matching nodes found.");}
-
-    if (nodeList !== null) {
-        console.log("Removing nodes.");
-        for (var i = 0; i < nodeList.length; i++) {
-            if (nodeList[0].id === "screen") {
-                i = nodeList.length;
-            }
-            else {
-                nodeList[0].remove();
+// create an observer instance
+var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+//      console.log("Detected mutation: " + mutation.type);
+        if (mutation.addedNodes !== null) {
+            for (var i = 0; i < mutation.addedNodes.length; i++) {
+//              console.log("Removing mutation: " + mutation.addedNodes[i]);
+                mutation.addedNodes[i].remove();
             }
         }
-    }
+    });
+});
+
+// configuration of the observer:
+var config = { attributes: true, childList: true, characterData: true };
+
+// pass in the target node, as well as the observer options
+if (target !== null && typeof target === 'object') {
+    observer.observe(target, config);
 }
+
+// later, you can stop observing
+//observer.disconnect();
