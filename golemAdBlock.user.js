@@ -9,7 +9,7 @@
 // @description Remove Golem anti-adblocker banner
 // @run-at      document-idle
 // @grant       none
-// @version     2.0.0
+// @version     2.0.1
 // ==/UserScript==
 
 // select the target node
