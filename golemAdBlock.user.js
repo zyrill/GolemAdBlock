@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name        Golem Adblocker
+// @name        Golem Anti-Adblocker-Blocker
 // @namespace   https://github.com/zyrill/GolemAdBlock
-// @description Blocks those annoying adblock notices left on Golem when using Adblock Plus
+// @description Blocks those annoying anti-adblock notices left on Golem when using an adblocker
 // @author      zyrill
 // @include     https://www.golem.de/*
 // @include     http://www.golem.de/*
