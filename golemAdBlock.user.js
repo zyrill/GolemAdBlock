@@ -6,7 +6,7 @@
 // @include     https://www.golem.de/*
 // @include     http://www.golem.de/*
 // @encoding    utf-8
-// @description Remove Golem Ads
+// @description Remove Golem anti-adblocker banner
 // @run-at      document-idle
 // @grant       none
 // @version     2.0.0
