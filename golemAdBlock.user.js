@@ -9,6 +9,7 @@
 // @description Remove Golem anti-adblocker banner
 // @run-at      document-idle
 // @grant       none
+// @license     MIT
 // @version     2.0.4
 // ==/UserScript==
 var target = document.getElementById("grandwrapper");
