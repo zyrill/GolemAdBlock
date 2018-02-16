@@ -10,6 +10,8 @@
 // @run-at      document-idle
 // @grant       none
 // @license     MIT
+// @updateURL   https://openuserjs.org/meta/zyrill/Golem_Anti-Adblocker-Blocker.meta.js
+// @copyright   2017, zyrill (https://openuserjs.org/users/zyrill)
 // @version     2.0.4
 // ==/UserScript==
 var target = document.getElementById("grandwrapper");
