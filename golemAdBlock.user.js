@@ -1,16 +1,16 @@
 // ==UserScript==
-// @name        Golem Anti-Adblocker-Blocker
-// @namespace   https://github.com/zyrill/GolemAdBlock
-// @description Blocks those annoying anti-adblock notices left on Golem when using an adblocker
 // @author      zyrill
+// @copyright   2017, zyrill (https://openuserjs.org/users/zyrill)
+// @description Blocks those annoying anti-adblock notices left on Golem when using an adblocker
+// @encoding    utf-8
+// @grant       none
 // @include     https://www.golem.de/*
 // @include     http://www.golem.de/*
-// @description Remove Golem anti-adblocker banner
-// @run-at      document-idle
-// @grant       none
 // @license     MIT
+// @name        Golem Anti-Adblocker-Blocker
+// @namespace   https://github.com/zyrill/GolemAdBlock
+// @run-at      document-idle
 // @updateURL   https://openuserjs.org/meta/zyrill/Golem_Anti-Adblocker-Blocker.meta.js
-// @copyright   2017, zyrill (https://openuserjs.org/users/zyrill)
 // @version     2.0.5
 // ==/UserScript==
 var target = document.getElementById("grandwrapper");
