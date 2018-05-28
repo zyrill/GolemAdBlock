@@ -11,9 +11,9 @@
 // @namespace   https://github.com/zyrill/GolemAdBlock
 // @run-at      document-idle
 // @updateURL   https://openuserjs.org/meta/zyrill/Golem_Anti-Adblocker-Blocker.meta.js
-// @version     2.0.5
+// @version     2.1.0
 // ==/UserScript==
-var target = document.getElementById("grandwrapper");
+var target = document.body;
 var observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
         if (mutation.addedNodes !== null) {
