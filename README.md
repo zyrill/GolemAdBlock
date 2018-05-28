@@ -1,2 +1,2 @@
 # GolemAdBlock
-Remove the banner at the top that appears when using Adblock Plus on golem.de
+Removes some banners and ad images appearing even though using Adblock Plus on golem.de
