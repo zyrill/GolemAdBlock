@@ -1,7 +1,7 @@
 // ==UserScript==
 // @author      zyrill
 // @copyright   2017, zyrill (https://openuserjs.org/users/zyrill)
-// @description Blocks those annoying anti-adblock notices left on Golem when using an adblocker
+// @description Blocks anti-adblock notices and some ads that Adblock Plus cannot catch on golem.de
 // @encoding    utf-8
 // @grant       none
 // @include     https://www.golem.de/*
