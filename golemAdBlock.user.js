@@ -12,7 +12,7 @@
 // @require     http://github.com/eligrey/mutaprophylaxis/raw/master/mutaprophylaxis.js
 // @run-at      document-idle
 // @updateURL   https://openuserjs.org/meta/zyrill/Golem_Anti-Adblocker-Blocker.meta.js
-// @version     2.2.1
+// @version     2.2.2
 // ==/UserScript==
 
 MutationEvent.protect(document.getElementById("grandwrapper"));
