@@ -15,7 +15,7 @@
 // @version     2.2.2
 // ==/UserScript==
 
-MutationEvent.protect(document.getElementById("grandwrapper"));
+MutationEvent.protect(document.getElementById("top"));
 
 function removeClutter() {
   console.log("Starting clutter removal.");
