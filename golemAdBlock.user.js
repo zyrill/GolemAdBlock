@@ -5,53 +5,48 @@
 // @encoding    utf-8
 // @grant       none
 // @include     https://www.golem.de/*
-// @include     http://www.golem.de/*
 // @license     MIT
 // @name        Golem Anti-Adblocker-Blocker
 // @namespace   https://github.com/zyrill/GolemAdBlock
-// @require     http://github.com/eligrey/mutaprophylaxis/raw/master/mutaprophylaxis.js
+// @require     https://github.com/eligrey/mutaprophylaxis/raw/master/mutaprophylaxis.js
 // @run-at      document-idle
 // @updateURL   https://openuserjs.org/meta/zyrill/Golem_Anti-Adblocker-Blocker.meta.js
-// @version     2.2.3
+// @version     3.0.0
 // ==/UserScript==
 
-MutationEvent.protect(document.getElementById("top"));
-
-function removeClutter() {
-  console.log("Starting clutter removal.");
-  target = document.getElementById("grandwrapper");
-  if (target.childNodes.length > 0) {
-    for (var i = 0; i < target.childNodes.length; i++) {
-      // console.log(target.childNodes[i].id);
-      if (target.childNodes[i].id !== "screen") {
-        console.log("Removing: " + target.childNodes[i].id);
-        target.childNodes[i].remove;
+var observer = new MutationObserver(
+  function(mutations) {
+    
+    if (document.body.hasChildNodes()) {
+      let nodeList = document.body.childNodes;
+      for(let i = 0; i < nodeList.length; i++) {
+        if (nodeList[0].className === "golem-flip-std") { continue; }
+        nodeList[0].remove();
       }
     }
+    
+    let nodeList1 = document.getElementsByClassName("golem-flip-std")[0].childNodes;
+    for(let i = 0; i < nodeList1.length; i++) {
+      if (nodeList1[0].id === "grandwrapper") { continue; }
+      nodeList1[0].remove();
+    }
+    
+    let nodeList2 = document.getElementById("grandwrapper").childNodes;
+    let n = 0;
+    for(let i = 0; i < nodeList2.length; i++) {
+      console.log(nodeList2[0].nodeName);
+      if (nodeList2[n].id === "screen") { n++; continue; }
+      nodeList2[n].remove();
+    }
+    
+    let nodeList3 = document.getElementById("screen").childNodes;
+    n = 0;
+    for(let i = 0; i < nodeList3.length; i++) {
+      if (nodeList3[n].id === "index-promo" || nodeList3[n].className === "g g4" || nodeList3[n].className === "longvideo-teaser"|| nodeList3[n].className === "longread-teaser") { n++; continue; }
+      nodeList3[n].remove();
+    }
+    
   }
-}
+)
 
-var target = document.body;
-var observer = new MutationObserver(function (mutations) {
-  mutations.forEach(function (mutation) {
-    if (mutation.type === 'childList') {
-      console.log("childList mutation detected.");
-      for (var i = 0; i < mutation.addedNodes.length; i++) {
-        console.log("Removing mutation: " + mutation.addedNodes[i]);
-        mutation.addedNodes[i].remove();
-      }
-    }
-    else {
-      console.log("Unknown mutation detected.");
-    }
-  });
-});
-var config = {
-  attributes: true,
-  childList: true,
-  characterData: true
-};
-if (target !== null && typeof target === 'object') {
-  observer.observe(target, config);
-  removeClutter();
-}
+observer.observe(document.body, { attributes: true, childList: true, attributeOldValue: true })
