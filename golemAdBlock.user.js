@@ -8,10 +8,9 @@
 // @license     MIT
 // @name        Golem Anti-Adblocker-Blocker
 // @namespace   https://github.com/zyrill/GolemAdBlock
-// @require     https://github.com/eligrey/mutaprophylaxis/raw/master/mutaprophylaxis.js
 // @run-at      document-idle
 // @updateURL   https://openuserjs.org/meta/zyrill/Golem_Anti-Adblocker-Blocker.meta.js
-// @version     3.0.0
+// @version     3.0.1
 // ==/UserScript==
 
 var observer = new MutationObserver(
