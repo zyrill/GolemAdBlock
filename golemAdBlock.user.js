@@ -1,6 +1,6 @@
 // ==UserScript==
 // @author      zyrill
-// @copyright   2017-2020, zyrill (https://openuserjs.org/users/zyrill)
+// @copyright   2020, zyrill (https://openuserjs.org/users/zyrill)
 // @description Blocks all ads and cleans up golem.de
 // @encoding    utf-8
 // @grant       none
@@ -10,7 +10,7 @@
 // @namespace   https://github.com/zyrill/GolemAdBlock
 // @run-at      document-idle
 // @updateURL   https://openuserjs.org/meta/zyrill/Golem_Anti-Adblocker-Blocker.meta.js
-// @version     3.1.3
+// @version     3.1.4
 // ==/UserScript==
 var observer = new MutationObserver((function (mutations) {
             // Use different filtering logic on article pages
