@@ -1,6 +1,6 @@
 // ==UserScript==
 // @author      zyrill
-// @copyright   2017, zyrill (https://openuserjs.org/users/zyrill)
+// @copyright   2017-2020, zyrill (https://openuserjs.org/users/zyrill)
 // @description Blocks anti-adblock notices and some ads that Adblock Plus does not easily catch on golem.de
 // @encoding    utf-8
 // @grant       none
@@ -10,7 +10,7 @@
 // @namespace   https://github.com/zyrill/GolemAdBlock
 // @run-at      document-idle
 // @updateURL   https://openuserjs.org/meta/zyrill/Golem_Anti-Adblocker-Blocker.meta.js
-// @version     3.1.1
+// @version     3.1.2
 // ==/UserScript==
 var observer = new MutationObserver((function (mutations) {
             // Use different filtering logic on article pages
@@ -23,8 +23,7 @@ var observer = new MutationObserver((function (mutations) {
                 let nodeList1 = document.getElementsByClassName("golemContentToHide")[0].childNodes;
                 for (let i = 0; i < nodeList1.length; i++)
                     "grandwrapper" !== nodeList1[n].id ? nodeList1[n].remove() : n++;
-                n = 0,
-                console.log("Checkpoint");
+                n = 0;
                 let nodeList2 = document.getElementById("grandwrapper").childNodes;
                 for (let i = 0; i < nodeList2.length; i++)
                     "screen" !== nodeList2[n].id ? nodeList2[n].remove() : n++;
@@ -51,12 +50,15 @@ var observer = new MutationObserver((function (mutations) {
                 let nodeList2 = document.getElementById("grandwrapper").childNodes,
                 n = 0;
                 for (let i = 0; i < nodeList2.length; i++)
-                    console.log(nodeList2[0].nodeName), "screen" !== nodeList2[n].id ? nodeList2[n].remove() : n++;
+                    "screen" !== nodeList2[n].id ? nodeList2[n].remove() : n++;
                 let nodeList3 = document.getElementById("screen").childNodes;
-                n = 0,
-                console.log("Pathname: " + window.location.pathname);
+                n = 0;
                 for (let i = 0; i < nodeList3.length; i++)
-                    "index-promo" !== nodeList3[n].id && "g g4" !== nodeList3[n].className && "longvideo-teaser" !== nodeList3[n].className && "longread-teaser" !== nodeList3[n].className ? nodeList3[n].remove() : n++
+                    "index-promo" !== nodeList3[n].id && "g g4" !== nodeList3[n].className && "longvideo-teaser" !== nodeList3[n].className && "longread-teaser" !== nodeList3[n].className ? nodeList3[n].remove() : n++;
+                let nodeList4 = document.getElementsByClassName("icon-comments");
+                n = 0;
+                for (let i = 0; i < nodeList4.length; i++)
+                    nodeList4[n].remove();
             }
         }));
 observer.observe(document.body, {
